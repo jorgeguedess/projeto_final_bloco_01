@@ -1,8 +1,32 @@
-import readlinesync = require("readline-sync");
+import readlinesync from "readline-sync";
 import { colors } from "./src/util/Colors";
+import { ProdutoComputador } from "./src/model/ProdutoComputador";
+import { ProdutoEletronico } from "./src/model/ProdutoEletronico";
+import { Categoria } from "./src/model/Produto";
 
 export function main() {
   let opcao: number;
+
+  const smartphone = new ProdutoEletronico(
+    1,
+    "Smartphone XYZ",
+    Categoria.Eletronico,
+    999.99,
+    "Samsung"
+  );
+
+  smartphone.visualizar();
+
+  const pcGamer = new ProdutoComputador(
+    2,
+    "PC Gamer",
+    1999.99,
+    "Asus",
+    "16GB DDR3",
+    "256GB SSD",
+    "Intel Xeon"
+  );
+  pcGamer.visualizar();
 
   while (true) {
     exibirMenu();
@@ -73,7 +97,7 @@ https://www.linkedin.com/in/jorgeguedess/
   }
 
   function exibirMenu(): void {
-    console.log(`${colors.bg.black}${colors.fg.blue}*********************************************************
+    console.log(`${colors.bg.black}${colors.fg.blue}\n*********************************************************
     
 COMÉRCIO ZATHUM - Os melhores eletrônicos estão aqui!
   
