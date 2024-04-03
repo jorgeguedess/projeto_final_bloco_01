@@ -11,9 +11,9 @@ type ProcessadorIntel =
   | "Intel Pentium"
   | "Intel Celeron";
 
-type TipoProcessador = ProcessadorAMD | ProcessadorIntel;
+export type TipoProcessador = ProcessadorAMD | ProcessadorIntel;
 
-type TipoMemoriaRam =
+export type TipoMemoriaRam =
   | "4GB DDR4"
   | "8GB DDR4"
   | "16GB DDR4"
@@ -23,13 +23,43 @@ type TipoMemoriaRam =
   | "16GB DDR3"
   | "32GB DDR3";
 
-type TipoArmazenamento =
+export type TipoArmazenamento =
   | "500GB HDD"
   | "256GB SSD"
   | "1TB HDD"
   | "512GB SSD"
   | "2TB HDD"
   | "1TB SSD";
+
+export const tiposProcessador: TipoProcessador[] = [
+  "Intel Core i9",
+  "Intel Core i7",
+  "Intel Core i5",
+  "Intel Core i3",
+  "Intel Xeon",
+  "Intel Pentium",
+  "Intel Celeron",
+];
+
+export const tiposMemoria: TipoMemoriaRam[] = [
+  "4GB DDR3",
+  "4GB DDR4",
+  "8GB DDR3",
+  "8GB DDR4",
+  "16GB DDR3",
+  "16GB DDR4",
+  "32GB DDR3",
+  "32GB DDR4",
+];
+
+export const tiposArmazenamento: TipoArmazenamento[] = [
+  "500GB HDD",
+  "256GB SSD",
+  "1TB HDD",
+  "512GB SSD",
+  "2TB HDD",
+  "1TB SSD",
+];
 
 export class ProdutoComputador extends ProdutoEletronico {
   private _memoriaRAM: TipoMemoriaRam;
