@@ -34,7 +34,7 @@ export function main() {
   let indiceArmazenamento: number;
 
   const smartphone = new ProdutoEletronico(
-    1,
+    produtos.gerarId(),
     "Smartphone XYZ",
     Categoria.Eletronico,
     999.99,
@@ -43,7 +43,7 @@ export function main() {
   produtos.cadastrar(smartphone);
 
   const pcGamer = new ProdutoComputador(
-    2,
+    produtos.gerarId(),
     "PC Gamer",
     1999.99,
     "Asus",
@@ -162,7 +162,7 @@ export function main() {
         switch (categoria) {
           case Categoria.Eletronico:
             const novoProdutoEletronico = new ProdutoEletronico(
-              produtos.gerarId(),
+              id,
               nome,
               Categoria.Eletronico,
               preco,
@@ -192,7 +192,7 @@ export function main() {
             processador = tiposProcessador[indiceProcessador];
 
             const novoProdutoComputador = new ProdutoComputador(
-              produtos.gerarId(),
+              id,
               nome,
               preco,
               marca,
